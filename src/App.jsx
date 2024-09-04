@@ -7,11 +7,14 @@ import Footer from "./components/Footer/App";
 import { CardHoverEffectDemo } from "./components/Hover Effect/app";
 // import App1 from "./components/3dRoller";
 import { AppAnimation } from "./components/3dRoller";
+import VideoFrame from "./components/FrameAffect/app";
 
 function App() {
   return (
     <>
-      <AppAnimation />{" "}
+      <VideoFrame />
+      <AppAnimation/>
+      {/* <AppAnimation />{" "} */}
       {/* Add this if you want to include the 3D Roller component */}
     </>
   );
