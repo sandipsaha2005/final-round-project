@@ -57,7 +57,7 @@ function ImageGenerator() {
         onChange={handleChange}
         placeholder="Enter a description"
       />
-      <button onClick={generateImage}>Generate Image</button>
+      <button style={{backgroundColor:'red'}} onClick={generateImage}>Generate Image</button>
       {imageURL && <img src={imageURL} alt="Generated" />}
     </div>
   );
