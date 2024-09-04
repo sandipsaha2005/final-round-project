@@ -19,7 +19,7 @@ const PageToRender = () => {
       ) : ( 
         <>
           <CardDemo />
-          <HorizontalScrollCarousel />
+          {/* <HorizontalScrollCarousel /> */}
           <Index/>
           {/* <Footer /> */}
           {/* <ImageGenerator /> */}  
