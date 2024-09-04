@@ -1,47 +1,49 @@
 import { HoverEffect } from "./ui";
-
 export function CardHoverEffectDemo() {
   return (
-    (<div className="max-w-5xl mx-auto px-8">
+    <div className="max-w-5xl mx-auto px-8">
       <HoverEffect items={projects} />
-    </div>)
+    </div>
   );
 }
+
 export const projects = [
   {
     title: "Ai BoyFriend",
-    description:
-      "A technology company that builds economic infrastructure for the internet.",
+    description: "",
     link: "https://stripe.com",
+    imageUrl: "https://play-lh.googleusercontent.com/vwd2H506u1ybBiHi7iFBnqepjw3ifHEAfEs0BVfZ1h8SKFG-p8wksk1ng5tIj4xKLwA",
   },
   {
-    title: "Netflix",
-    description:
-      "A streaming service that offers a wide variety of award-winning TV shows, movies, anime, documentaries, and more on thousands of internet-connected devices.",
+    title: "Logo Design",
+
+    description: "",
     link: "https://netflix.com",
+    imageUrl: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSqOtyRoG2gPHSeVyoysIRefri1fRKatbHwCw&s",
   },
   {
     title: "Google",
-    description:
-      "A multinational technology company that specializes in Internet-related services and products.",
+    description: "",
     link: "https://google.com",
+    imageUrl: "https://example.com/image3.jpg",
   },
   {
     title: "Meta",
-    description:
-      "A technology company that focuses on building products that advance Facebook's mission of bringing the world closer together.",
+    description: "",
     link: "https://meta.com",
+    imageUrl: "https://example.com/image4.jpg",
   },
   {
     title: "Amazon",
-    description:
-      "A multinational technology company focusing on e-commerce, cloud computing, digital streaming, and artificial intelligence.",
+    description: "",
     link: "https://amazon.com",
+    imageUrl: "https://example.com/image5.jpg",
   },
   {
     title: "Microsoft",
-    description:
-      "A multinational technology company that develops, manufactures, licenses, supports, and sells computer software, consumer electronics, personal computers, and related services.",
+    description: "",
     link: "https://microsoft.com",
+    imageUrl: "https://example.com/image6.jpg",
   },
+  // Add more projects as needed
 ];
