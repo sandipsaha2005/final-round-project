@@ -1,4 +1,4 @@
-import { HoverEffect } from "../ui/card-hover-effect";
+import { HoverEffect } from "./ui";
 
 export function CardHoverEffectDemo() {
   return (
@@ -9,7 +9,7 @@ export function CardHoverEffectDemo() {
 }
 export const projects = [
   {
-    title: "Stripe",
+    title: "Ai BoyFriend",
     description:
       "A technology company that builds economic infrastructure for the internet.",
     link: "https://stripe.com",
