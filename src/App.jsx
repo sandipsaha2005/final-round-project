@@ -4,6 +4,10 @@ import viteLogo from '/vite.svg'
 import './App.css'
 import { CardDemo } from './components/Card/App'
 import Footer from './components/Footer/App'
+import { HoverImageLinks } from './components/HoverImage/App'
+import VideoFrame from './components/FrameEffect/App'
+
+
 
 
 function App() {
@@ -11,7 +15,8 @@ function App() {
 
   return (
     <>
-      
+      <VideoFrame/>
+      <HoverImageLinks/>
       <CardDemo/>
       <Footer/>
     </>
