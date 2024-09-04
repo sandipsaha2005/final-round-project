@@ -12,7 +12,7 @@ import { MacbookScrollDemo } from "../components/macbook";
 import Index from "../components/generate-image-guide";
 import BlurClear from "../components/blurclear";
 const PageToRender = () => {
-  const [navOpen, setNavOpen] = useState(true);
+  const [navOpen, setNavOpen] = useState(false);
   return (
     <div style={{display:'flex',flexDirection:'column',alignItems:'center'}}>
        {navOpen ? (
