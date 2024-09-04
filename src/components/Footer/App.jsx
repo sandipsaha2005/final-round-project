@@ -2,12 +2,11 @@ import React from "react";
 
 const Footer = () => {
   return (
-    <footer className="bg-black text-white py-11">
-      <div className="container mx-auto flex flex-col md:flex-row justify-between items-start">
-        {/* Logo and Description - 34% width */}
-        <div className="w-full md:w-1/3 mb-4 md:mb-0">
+    <footer className="bg-zinc-900 text-white">
+      <div className="container mx-auto flex flex-col md:flex-row justify-between items-start ">
+        <div className="w-full md:w-1/3 mb-4 md:mb-0 py-8 pt-11">
           <img
-            src="/path-to-logo.png" // Replace with the path to your logo
+            src="/path-to-logo.png"
             alt="Bequant Logo"
             className="w-16 h-16 mb-2"
           />
@@ -19,10 +18,12 @@ const Footer = () => {
         </div>
 
         {/* Links Sections - 22% width each */}
-        <div className="w-full md:w-2/3 flex flex-col md:flex-row justify-between">
+        <div className="w-full md:w-2/3 flex flex-col md:flex-row justify-center ">
           {/* Product Section */}
-          <div className="w-full md:w-2/9 mb-4 md:mb-0">
-            <h3 className="text-sm text-gray-400 uppercase tracking-widest mb-4">Product</h3>
+          <div className="w-full md:w-2/9 mb-4 md:mb-0 transition-all duration-300 hover:bg-gradient-to-t hover:from-zinc-900 hover:to-zinc-950 py-8 pt-11 group">
+            <h3 className="text-sm text-gray-400 uppercase tracking-widest mb-4 transition-all duration-300 group-hover:text-red-500">
+              Product
+            </h3>
             <ul>
               <li className="mb-2">
                 <a href="#" className="text-gray-300 hover:text-white">TCP Optimization</a>
@@ -40,8 +41,10 @@ const Footer = () => {
           </div>
 
           {/* General Section */}
-          <div className="w-full md:w-2/9 mb-4 md:mb-0">
-            <h3 className="text-sm text-gray-400 uppercase tracking-widest mb-4">General</h3>
+          <div className="w-full md:w-2/9 mb-4 md:mb-0 py-8 pt-11 transition-all duration-300 hover:bg-gradient-to-t hover:from-zinc-900 hover:to-zinc-950 group">
+            <h3 className="text-sm text-gray-400 uppercase tracking-widest mb-4 transition-all duration-300 group-hover:text-red-500">
+              General
+            </h3>
             <ul>
               <li className="mb-2">
                 <a href="#" className="text-gray-300 hover:text-white">Customers</a>
@@ -65,8 +68,10 @@ const Footer = () => {
           </div>
 
           {/* Social Section */}
-          <div className="w-full md:w-2/9">
-            <h3 className="text-sm text-gray-400 uppercase tracking-widest mb-4">Social</h3>
+          <div className="w-full md:w-2/9 transition-all duration-300 hover:bg-gradient-to-t hover:from-zinc-900 hover:to-zinc-950 group">
+            <h3 className="text-sm text-gray-400 uppercase tracking-widest mb-4 transition-all duration-300 group-hover:text-red-500">
+              Social
+            </h3>
             <ul>
               <li className="mb-2">
                 <a href="#" className="text-gray-300 hover:text-white">LinkedIn</a>
@@ -83,8 +88,8 @@ const Footer = () => {
       </div>
 
       {/* Bottom Links */}
-      <div className="border-t border-gray-700 ">
-        <div className="container mx-auto flex justify-between text-gray-400 text-sm">
+      <div className="border-t border-gray-700 mt-4 pt-2">
+        <div className="container mx-auto mt-2 pb-4 flex justify-between text-gray-400 text-sm">
           <a href="#" className="hover:text-white">Documentation</a>
           <a href="#" className="hover:text-white">Privacy & Cookie Policy</a>
         </div>
