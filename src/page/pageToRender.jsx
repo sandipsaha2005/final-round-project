@@ -12,13 +12,14 @@ import { MacbookScrollDemo } from "../components/macbook";
 import Index from "../components/generate-image-guide";
 import BlurClear from "../components/blurclear";
 const PageToRender = () => {
-  const [navOpen, setNavOpen] = useState(false);
+  const [navOpen, setNavOpen] = useState(true);
   return (
     <div style={{display:'flex',flexDirection:'column',alignItems:'center'}}>
        {navOpen ? (
         <HoverImageLinks/>
       ) : ( 
         <>
+
           <CardDemo />
           {/* <HorizontalScrollCarousel /> */}
           <Index/>
