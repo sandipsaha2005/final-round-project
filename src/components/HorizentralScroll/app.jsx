@@ -3,10 +3,10 @@ import { useRef } from "react";
 
 const Example = () => {
   return (
-    <div className="bg-neutral-800">
+    <div className="bg-neutral-900">
       <div className="flex h-48 items-center justify-center">
-        <span className="font-semibold uppercase text-neutral-500">
-          Scroll down
+        <span className="font-semibold uppercase text-neutral-500 text-4xl">
+        Flux.1 AI Features
         </span>
       </div>
       <HorizontalScrollCarousel />
@@ -25,7 +25,7 @@ const HorizontalScrollCarousel = () => {
     target: targetRef,
   });
 
-  const x = useTransform(scrollYProgress, [0, 1], ["1%", "-70%"]);
+  const x = useTransform(scrollYProgress, [0, 1], ["1%", "-53%"]);
 
   return (
     <section ref={targetRef} className="relative h-[300vh] bg-neutral-900">
