@@ -50,16 +50,35 @@ function ImageGenerator() {
   
 
   return (
-    <div>
-      <input
-        type="text"
-        value={inputText}
-        onChange={handleChange}
-        placeholder="Enter a description"
-      />
-      <button onClick={generateImage}>Generate Image</button>
-      {imageURL && <img src={imageURL} alt="Generated" />}
-    </div>
+    <div className="flex flex-col items-center justify-center space-y-4 bg-gray-900 min-h-screen p-4">
+    <h2 className="text-2xl font-semibold text-white mb-4">Generate Image</h2>
+    
+    <input
+      type="text"
+      value={inputText}
+      onChange={handleChange}
+      placeholder="Enter a description"
+      className="w-full max-w-md p-3 text-black rounded-lg focus:ring-2 focus:ring-indigo-600 focus:outline-none transition duration-200"
+    />
+  
+    <button 
+      onClick={generateImage}
+      className="px-6 py-2 bg-indigo-600 text-white font-medium rounded-lg hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-indigo-400 transition duration-300"
+    >
+      Generate Image
+    </button>
+  
+    {imageURL && (
+      <div className="mt-6">
+        <img 
+          src={imageURL} 
+          alt="Generated" 
+          className="rounded-lg shadow-lg border border-gray-700 max-w-md mx-auto"
+        />
+      </div>
+    )}
+  </div>
+  
   );
 }
 
