@@ -10,6 +10,7 @@ import NavbarDemo from "../components/organs/Navbar";
 import { HoverImageLinks } from "../components/newNavbar";
 import { MacbookScrollDemo } from "../components/macbook";
 import Index from "../components/generate-image-guide";
+import BlurClear from "../components/blurclear";
 const PageToRender = () => {
   const [navOpen, setNavOpen] = useState(false);
   return (
@@ -21,6 +22,7 @@ const PageToRender = () => {
           <CardDemo />
           {/* <HorizontalScrollCarousel /> */}
           <Index/>
+          <BlurClear/>
           {/* <Footer /> */}
           {/* <ImageGenerator /> */}  
           {/* <MacbookScrollDemo/> */}
