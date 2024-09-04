@@ -20,7 +20,7 @@ const Footer = () => {
         {/* Links Sections - 22% width each */}
         <div className="w-full md:w-2/3 flex flex-col md:flex-row justify-center ">
           {/* Product Section */}
-          <div className="w-full md:w-2/9 mb-4 md:mb-0 transition-all duration-300 hover:bg-gradient-to-t hover:from-zinc-900 hover:to-zinc-950 py-8 pt-11 group">
+          <div className=" py-8 pt-11 w-full md:w-2/9 mb-4 md:mb-0 transition-all duration-300 hover:bg-gradient-to-t hover:from-zinc-900 hover:to-zinc-950 group">
             <h3 className="text-sm text-gray-400 uppercase tracking-widest mb-4 transition-all duration-300 group-hover:text-red-500">
               Product
             </h3>
@@ -41,7 +41,7 @@ const Footer = () => {
           </div>
 
           {/* General Section */}
-          <div className="w-full md:w-2/9 mb-4 md:mb-0 py-8 pt-11 transition-all duration-300 hover:bg-gradient-to-t hover:from-zinc-900 hover:to-zinc-950 group">
+          <div className="py-8 pt-11 w-full md:w-2/9 mb-4 md:mb-0  transition-all duration-300 hover:bg-gradient-to-t hover:from-zinc-900 hover:to-zinc-950 group">
             <h3 className="text-sm text-gray-400 uppercase tracking-widest mb-4 transition-all duration-300 group-hover:text-red-500">
               General
             </h3>
@@ -68,7 +68,7 @@ const Footer = () => {
           </div>
 
           {/* Social Section */}
-          <div className="w-full md:w-2/9 transition-all duration-300 hover:bg-gradient-to-t hover:from-zinc-900 hover:to-zinc-950 group">
+          <div className="py-8 pt-11 w-full md:w-2/9 transition-all duration-300 hover:bg-gradient-to-t hover:from-zinc-900 hover:to-zinc-950 group">
             <h3 className="text-sm text-gray-400 uppercase tracking-widest mb-4 transition-all duration-300 group-hover:text-red-500">
               Social
             </h3>
