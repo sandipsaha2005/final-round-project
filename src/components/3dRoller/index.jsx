@@ -7,27 +7,29 @@ import { easing, geometry } from 'maath';
 
 extend(geometry);
 
-export const App = () => (
-  <Canvas dpr={[1, 1.5]}>
+export const AppAnimation = () => (
+  <Canvas dpr={[1, 1.5]} camera={{ position: [0, 0, 10], fov: 50 }}>
     <ScrollControls pages={4} infinite>
-      <Scene position={[0, 1.5, 0]} />
+      <Scene position={[0, 0, 0]} />
     </ScrollControls>
   </Canvas>
 );
 
-function Scene({ children, ...props }) {
+function Scene({ ...props }) {
   const ref = useRef();
   const scroll = useScroll();
   const [hovered, hover] = useState(null);
+
   useFrame((state, delta) => {
     ref.current.rotation.y = -scroll.offset * (Math.PI * 2); // Rotate contents
     state.events.update(); // Raycasts every frame rather than on pointer-move
-    easing.damp3(state.camera.position, [-state.pointer.x * 2, state.pointer.y * 2 + 4.5, 9], 0.3, delta);
+    easing.damp3(state.camera.position, [-state.pointer.x * 2, state.pointer.y * 2 + 4.5, 10], 0.3, delta);
     state.camera.lookAt(0, 0, 0);
   });
+
   return (
     <group ref={ref} {...props}>
-      <Cards category="spring" from={0} len={Math.PI / 4} onPointerOver={hover} onPointerOut={hover} />
+      <Cards category="Ai Logo" from={0} len={Math.PI / 4} onPointerOver={hover} onPointerOut={hover} />
       <Cards category="summer" from={Math.PI / 4} len={Math.PI / 2} position={[0, 0.4, 0]} onPointerOver={hover} onPointerOut={hover} />
       <Cards category="autumn" from={Math.PI / 4 + Math.PI / 2} len={Math.PI / 2} onPointerOver={hover} onPointerOut={hover} />
       <Cards category="winter" from={Math.PI * 1.25} len={Math.PI * 2 - Math.PI * 1.25} position={[0, -0.4, 0]} onPointerOver={hover} onPointerOut={hover} />
@@ -40,14 +42,15 @@ function Cards({ category, from = 0, len = Math.PI * 2, radius = 5.25, onPointer
   const [hovered, hover] = useState(null);
   const amount = Math.round(len * 22);
   const textPosition = from + (amount / 2 / amount) * len;
+
   return (
     <group {...props}>
       <Billboard position={[Math.sin(textPosition) * radius * 1.4, 0.5, Math.cos(textPosition) * radius * 1.4]}>
-        <Text fontSize={0.25} anchorX="center" color="black">
+        <Text fontSize={0.5} anchorX="center" color="black">
           {category}
         </Text>
       </Billboard>
-      {Array.from({ length: amount - 3 /* minus 3 images at the end, creates a gap */ }, (_, i) => {
+      {Array.from({ length: amount - 3 }, (_, i) => {
         const angle = from + (i / amount) * len;
         return (
           <Card
@@ -73,9 +76,10 @@ function Card({ url, active, hovered, ...props }) {
     easing.damp3(ref.current.position, [0, hovered ? 0.25 : 0, 0], 0.1, delta);
     easing.damp3(ref.current.scale, [1.618 * f, 1 * f, 1], 0.15, delta);
   });
+
   return (
     <group {...props}>
-      <Image ref={ref} transparent radius={0.075} url={url} scale={[1.618, 1, 1]} side={THREE.DoubleSide} />
+      <Image ref={ref} transparent radius={0.1} url={url} scale={[1.618, 1, 1]} side={THREE.DoubleSide} />
     </group>
   );
 }
@@ -84,16 +88,18 @@ function ActiveCard({ hovered, ...props }) {
   const ref = useRef();
   const name = useMemo(() => generate({ exactly: 2 }).join(' '), [hovered]);
   useLayoutEffect(() => void (ref.current.material.zoom = 0.8), [hovered]);
+
   useFrame((state, delta) => {
     easing.damp(ref.current.material, 'zoom', 1, 0.5, delta);
     easing.damp(ref.current.material, 'opacity', hovered !== null, 0.3, delta);
   });
+
   return (
     <Billboard {...props}>
-      <Text fontSize={0.5} position={[2.15, 3.85, 0]} anchorX="left" color="black">
+      <Text fontSize={0.6} position={[0, 2, 0]} anchorX="center" color="black">
         {hovered !== null && `${name}\n${hovered}`}
       </Text>
-      <Image ref={ref} transparent radius={0.3} position={[0, 1.5, 0]} scale={[3.5, 1.618 * 3.5, 0.2, 1]} url={`/img${Math.floor(hovered % 10) + 1}.jpg`} />
+      <Image ref={ref} transparent radius={0.3} position={[0, 0, 0]} scale={[3.5, 3.5, 0.2]} url={`/img${Math.floor(hovered % 10) + 1}.jpg`} />
     </Billboard>
   );
 }
